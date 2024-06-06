@@ -9,3 +9,12 @@
 }
 
 .transform{transform: scale(1.5); opacity: 0.1;}
+
+.container{
+    min-width: 1300px;
+}
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: green black;
+}

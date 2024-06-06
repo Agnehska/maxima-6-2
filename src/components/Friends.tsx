@@ -2,7 +2,7 @@ import React from 'react';
 
 const Friends = () => {
 	return (
-		<div className='p-10 flex flex-wrap items-center justify-center'>
+		<div className='p-4 flex flex-wrap items-center justify-center'>
 			<div className='flex-shrink-0 m-6 relative overflow-hidden bg-blue-400 rounded-lg max-w-xs shadow-lg'>
 				<svg
 					className='absolute bottom-0 left-0 mb-8 transform'
