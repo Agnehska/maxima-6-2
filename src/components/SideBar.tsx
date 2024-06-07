@@ -70,6 +70,7 @@ const SideBar = () => {
 					<Route path="/music" element={<Music />} />
 					<Route path="/video" element={<Video />} />
 					<Route path="/news" element={<Wall />} />
+					{/* ugiuhyiuhyoiuy */}
                 </Routes>
             </div>
 		</div>
