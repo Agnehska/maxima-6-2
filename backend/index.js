@@ -67,20 +67,45 @@ app.get("/", (req, res) => {
 
 // request body
 
+// app.use(express.json());
+
+// app.post("/users/:userId/profiles/:profileId", (req, res) => {
+//   const queryStringValues = req.query;
+//   const params = req.params;
+//   const body = req.body;
+
+//   res.json({
+//     params,
+//     queryStringValues,
+//     body,
+//   });
+
+//   console.log(params, queryStringValues, body);
+// });
+
+// ----------------- 3 --------------
+
 app.use(express.json());
 
-app.post("/users/:userId/profiles/:profileId", (req, res) => {
-  const queryStringValues = req.query;
-  const params = req.params;
-  const body = req.body;
+const fakeUser = {
+  id: 4,
+  name: "Jane Doe",
+  email: "somemail@gmail.com",
+};
 
-  res.json({
-    params,
-    queryStringValues,
-    body,
+app
+  .route("/users")
+  .post((req, res) => {
+    res.send({ ...fakeUser, ...req.body });
+  })
+  .get((req, res) => {
+    res.send({ "user data": "somedata" });
+  })
+  .put((req, res) => {
+    res.send(fakeUser);
+  })
+  .delete((req, res) => {
+    res.send(fakeUser);
   });
-
-  console.log(params, queryStringValues, body);
-});
 
 export default app;
