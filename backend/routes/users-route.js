@@ -55,16 +55,16 @@ import { role } from "../middleware/role.js";
 
 const router = Router();
 
-router.use(auth);
+// router.use(auth);
 
-router.get("/", role("admin"), (req, res) => {
+router.get("/", [auth, role("admin")], (req, res) => {
   console.log("authenticated:", req.authenticated);
   console.log("auth data:", req.auth);
 
   return res.json(findMany());
 });
 
-router.get("/:id", role("admin"), (req, res) => {
+router.get("/:id", [auth, role("admin")], (req, res) => {
   console.log(req.params.id);
 
   return res.json(findById(req.params.id));
