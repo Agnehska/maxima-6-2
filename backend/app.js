@@ -1,6 +1,14 @@
 import express from "express";
+import cors from "cors";
 
 const app = express();
+
+const corsOptions = {
+  origin: "http://localhost:5173", // Разрешить запросы с этого домена
+  optionsSuccessStatus: 200, // Для поддержки старых браузеров
+};
+
+app.use(cors(corsOptions));
 
 import todoRouter from "./todo/todo-router.js";
 
