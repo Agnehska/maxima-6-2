@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export const Profile = () => {
+
+  useEffect(() => {
+    fetch('http://localhost:3000/profile')
+    .then(res => res.json())
+    .then(profile => console.log(profile))
+  }, [])  
   return (
     <div className="flex space-x-4 pt-4">
         <div className="bg-white overflow-hidden shadow rounded-lg border mx-4 box">
