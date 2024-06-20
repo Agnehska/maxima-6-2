@@ -2,7 +2,7 @@ import React, { createContext } from 'react';
 import ReactDOM from "react-dom/client";
 import App from './App';
 import Store from "./store/store";
-import { ClerkProvider } from '@clerk/clerk-react';
+// import { ClerkProvider } from '@clerk/clerk-react';
 
 interface State {
     store: Store,
@@ -23,11 +23,11 @@ if (!PUBLISHABLE_KEY) {
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
-        <Context.Provider value={{
-            store
-        }}>
-            <App />
-        </Context.Provider>
-    </ClerkProvider >
+    // <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+    <Context.Provider value={{
+        store
+    }}>
+        <App />
+    </Context.Provider>
+    // </ClerkProvider >
 );
